@@ -19,7 +19,8 @@
     "eject": "react-scripts eject"
   },
   "engines": {
-    "node": "8.12.0"
+    "node": "8.12.0",
+    "npm": "6.5.0"
   },
   "browserslist": [
     ">0.2%",

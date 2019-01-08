@@ -1,0 +1,8 @@
+html {
+  font-size: 18px;
+}
+
+.form-control.is-valid, .was-validated .form-control:valid,
+.form-control.is-invalid, .was-validated .form-control:invalid {
+  padding-right: 0;
+}

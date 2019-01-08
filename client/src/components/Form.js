@@ -1,9 +1,10 @@
 import React from "react";
-import { MDBAutocomplete, MDBRow, MDBCol, MDBBtn } from "mdbreact";
+import { MDBAutocomplete, MDBRow, MDBCol, MDBBtn, MDBInput } from "mdbreact";
+import styled from 'styled-components';
 
 const { citiesStates } = require('../citiesStates');
 
-class FormsPage extends React.Component {
+class Form extends React.Component {
   state = {
     fname: "",
     lname: "",
@@ -31,13 +32,8 @@ class FormsPage extends React.Component {
         >
           <MDBRow>
             <MDBCol md="4" className="mb-3">
-              <label
-                htmlFor="defaultFormRegisterNameEx"
-                className="grey-text"
-              >
-                First name
-              </label>
-              <input
+              <MDBInput
+                label="First Name"
                 value={this.state.fname}
                 name="fname"
                 onChange={this.changeHandler}
@@ -47,16 +43,10 @@ class FormsPage extends React.Component {
                 placeholder="First name"
                 required
               />
-              <div className="valid-feedback">Looks good!</div>
             </MDBCol>
             <MDBCol md="4" className="mb-3">
-              <label
-                htmlFor="defaultFormRegisterEmailEx2"
-                className="grey-text"
-              >
-                Last name
-              </label>
-              <input
+              <MDBInput
+                label="Last Name"
                 value={this.state.lname}
                 name="lname"
                 onChange={this.changeHandler}
@@ -66,16 +56,10 @@ class FormsPage extends React.Component {
                 placeholder="Last name"
                 required
               />
-              <div className="valid-feedback">Looks good!</div>
             </MDBCol>
             <MDBCol md="4" className="mb-3">
-              <label
-                htmlFor="defaultFormRegisterConfirmEx3"
-                className="grey-text"
-              >
-                Email
-              </label>
-              <input
+              <MDBInput
+                label="Email"
                 value={this.state.email}
                 onChange={this.changeHandler}
                 type="email"
@@ -92,13 +76,8 @@ class FormsPage extends React.Component {
           </MDBRow>
           <MDBRow>
             <MDBCol md="6" className="mb-2">
-              <label
-                htmlFor="defaultFormRegisterPasswordEx4"
-                className="grey-text"
-              >
-                Domain
-              </label>
-              <input
+              <MDBInput
+                label="www.yourdomainhere.com"
                 value={this.state.domain}
                 onChange={this.changeHandler}
                 type="text"
@@ -108,23 +87,9 @@ class FormsPage extends React.Component {
                 placeholder="Your website"
                 required
               />
-              <div className="invalid-feedback">
-                Please provide a valid city.
-              </div>
-              <div className="valid-feedback">Looks good!</div>
             </MDBCol>
             <MDBCol md="6" className="mb-2">
-              <label
-                htmlFor="defaultFormRegisterPasswordEx4"
-                className="grey-text"
-              >
-                Location
-              </label>
               <MDBAutocomplete label="City / State" clear data={citiesStates} required />
-              <div className="invalid-feedback">
-                Please select a city/state.
-              </div>
-              <div className="valid-feedback">Looks good!</div>
             </MDBCol>
           </MDBRow>
           <MDBBtn color="primary" type="submit">
@@ -136,4 +101,4 @@ class FormsPage extends React.Component {
   }
 }
 
-export default FormsPage;
+export default Form;

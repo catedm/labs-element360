@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "gtmetrix": "^1.3.0",
     "http-proxy-middleware": "^0.19.1",
     "mdbreact": "git+https://oauth2:TAPvjjDtZ5wRr9MnezBf@git.mdbootstrap.com/mdb/react/re-pro.git",

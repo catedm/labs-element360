@@ -31,6 +31,10 @@ class Form extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
+  setLocationInState = value => {
+    this.setState({ ["location"]: value });
+  }
+
   render() {
     const { fireRedirect } = this.state;
     return (
@@ -98,8 +102,7 @@ class Form extends React.Component {
               </MDBCol>
               <MDBCol md="6" className="mb-2">
                 <MDBAutocomplete
-                  value={this.state.location}
-                  onChange={this.changeHandler}
+                  getValue={this.setLocationInState}
                   label="City / State"
                   name="location"
                   data={citiesStates}

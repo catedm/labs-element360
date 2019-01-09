@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import { MDBJumbotron, MDBContainer, MDBRow, MDBCol } from "mdbreact";
+import React from 'react';
 import styled from 'styled-components';
 
 const Header = () => {

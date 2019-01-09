@@ -38,7 +38,6 @@ class Form extends React.Component {
                 name="fname"
                 onChange={this.changeHandler}
                 type="text"
-                id="defaultFormRegisterNameEx"
                 className="form-control"
                 placeholder="First name"
                 required
@@ -51,7 +50,6 @@ class Form extends React.Component {
                 name="lname"
                 onChange={this.changeHandler}
                 type="text"
-                id="defaultFormRegisterEmailEx2"
                 className="form-control"
                 placeholder="Last name"
                 required
@@ -63,7 +61,6 @@ class Form extends React.Component {
                 value={this.state.email}
                 onChange={this.changeHandler}
                 type="email"
-                id="defaultFormRegisterConfirmEx3"
                 className="form-control"
                 name="email"
                 placeholder="Your Email address"
@@ -81,7 +78,6 @@ class Form extends React.Component {
                 value={this.state.domain}
                 onChange={this.changeHandler}
                 type="text"
-                id="defaultFormRegisterPasswordEx4"
                 className="form-control"
                 name="domain"
                 placeholder="Your website"
@@ -93,7 +89,7 @@ class Form extends React.Component {
             </MDBCol>
           </MDBRow>
           <MDBBtn color="primary" type="submit">
-            Submit Form
+            Get Statistics
           </MDBBtn>
         </form>
       </div>

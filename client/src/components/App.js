@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 import Form from './Form';
+import Results from './Results';
 import Header from './Header';
 import { MDBContainer } from 'mdbreact';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from 'react-router-dom';
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
@@ -20,12 +26,15 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <Header />
-        <MDBContainer>
-          <Form />
-        </MDBContainer>
-      </div>
+      <Router>
+        <div>
+          <Header />
+          <Switch>
+            <Route exact path="/" component={Form} />
+            <Route exact path="/results" component={Results} />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }

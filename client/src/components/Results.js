@@ -29,10 +29,10 @@ export default class Results extends Component {
     // fetch GTMetrix data
     this.fetchGTMetrix();
     // fetch google search console mobile friendly?
-    this.fetchGSC();
+    // this.fetchGSC();
   }
 
-  fetchGSC() {
+  async fetchGSC() {
     const res = await axios.post('/api/googlesearchconsole', {
       url: this.state.domain
     });

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Spinner, MDBContainer, Progress } from 'mdbreact';
+import { MDBContainer, Progress } from 'mdbreact';
 import styled from 'styled-components';
 
 class Loader extends Component {

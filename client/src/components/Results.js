@@ -9,7 +9,7 @@ export default class Results extends Component {
     location: "Asheville NC",
     title: "Generating Technical Foundation Report...",
     loading: true,
-    progressBarValue: 0,
+    progressBarValue: 10,
 
     GTMetrix: {
       first_paint_time: null,
@@ -21,7 +21,7 @@ export default class Results extends Component {
 
     GoogleSearchConsole: {
       mobileFriendly: null,
-      screenshot: null,
+      screenshotPath: null,
     }
   }
 
@@ -29,14 +29,23 @@ export default class Results extends Component {
     // fetch GTMetrix data
     this.fetchGTMetrix();
     // fetch google search console mobile friendly?
-    // this.fetchGSC();
+    this.fetchGSC();
   }
 
   async fetchGSC() {
     const res = await axios.post('/api/googlesearchconsole', {
       url: this.state.domain
     });
-    // update state loading message
+
+    return this.setState({
+      ...this.state,
+      GoogleSearchConsole: {
+        mobileFriendly: res.data.mobileFriendly === "MOBILE_FRIENDLY" ? true : false,
+        screenshotPath: res.data.screenshotPath
+      },
+      title: "Gathering Organic Search Visibility Data...",
+      progressBarValue: 50
+    });
   }
 
   async fetchGTMetrix() {
@@ -46,9 +55,7 @@ export default class Results extends Component {
 
     const { first_paint_time, report_url, page_load_time, fully_loaded_time, pagespeed_score } = res.data.results;
 
-    console.log(res.data);
-
-    this.setState({
+    return this.setState({
       ...this.state,
       GTMetrix: {
         first_paint_time: first_paint_time,
@@ -60,8 +67,6 @@ export default class Results extends Component {
       title: "Generating Mobile Friendly Report...",
       progressBarValue: 25
     });
-
-    return res;
   }
 
   render() {

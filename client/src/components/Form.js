@@ -1,7 +1,6 @@
 import React from "react";
 import { MDBContainer, MDBAutocomplete, MDBRow, MDBCol, MDBBtn, MDBInput } from "mdbreact";
 import { Redirect } from 'react-router-dom';
-import { log } from "util";
 
 const { citiesStates } = require('../citiesStates');
 
@@ -22,6 +21,7 @@ class Form extends React.Component {
   submitHandler = event => {
     event.preventDefault();
     event.target.className += " was-validated";
+    // trigger redirect to the results page if form validation works
     if (this.checkValidation()) {
       this.setState({ fireRedirect: true })
     }
@@ -90,10 +90,10 @@ class Form extends React.Component {
             <MDBRow>
               <MDBCol md="6" className="mb-2">
                 <MDBInput
-                  label="www.yourdomainhere.com"
+                  label="http://www.yourdomainhere.com"
                   value={this.state.domain}
                   onChange={this.changeHandler}
-                  type="text"
+                  type="url"
                   className="form-control"
                   name="domain"
                   placeholder="Your website"

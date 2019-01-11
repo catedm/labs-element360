@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Form from './Form';
 import Results from './Results';
 import Header from './Header';
-import { MDBContainer } from 'mdbreact';
+import ContactFormPage from './Test';
 import {
   BrowserRouter as Router,
   Route,
@@ -31,6 +31,7 @@ class App extends Component {
           <Header />
           <Switch>
             <Route exact path="/" component={Form} />
+            <Route exact path="/test" component={ContactFormPage} />
             <Route exact path="/results" component={Results} />
           </Switch>
         </div>

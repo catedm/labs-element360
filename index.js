@@ -27,6 +27,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 require('./routes/gtMetrixRoutes')(app);
+require('./routes/GSCRoutes')(app);
 
 const PORT = process.env.PORT || 3030;
 app.listen(PORT);
